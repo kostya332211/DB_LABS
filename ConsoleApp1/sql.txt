@@ -1,0 +1,44 @@
+
+
+create table COMPANY
+(
+Id int identity(1,1) constraint COMPANY_ID_PK PRIMARY KEY,
+Company nvarchar(50) unique,
+Country nvarchar(50)
+)
+
+create table ITEM
+(
+Id int identity(1,1) constraint ITEM_ID_PK PRIMARY KEY,
+Comment nvarchar(50),
+Company int constraint COMPANY_ID_FK foreign key references COMPANY(Id)
+)
+
+create table STORAGE
+(
+Item int constraint ITEM_ID_FK foreign key references ITEM(Id),
+CountItems int
+)
+
+
+CREATE NONCLUSTERED INDEX i1 ON ITEM(Comment);
+
+
+CREATE TRIGGER ItemAddInStorage
+ON STORAGE
+AFTER INSERT
+AS
+RAISERROR('New item was added in storage',16,0) WITH NOWAIT;
+
+INSERT INTO COMPANY VALUES('AAAAAA','BBBBBB')
+INSERT INTO COMPANY VALUES('ASC','DDD')
+INSERT INTO COMPANY VALUES('ASD','123')
+
+INSERT INTO ITEM VALUES('aaaaaaaaaaaa',1)
+INSERT INTO ITEM VALUES('bbbbbbbbbbbb',1)
+INSERT INTO ITEM VALUES('ccccccccccccc',3)
+SELECT * FROM ITEM
+
+INSERT INTO STORAGE VALUES(3,1000)
+INSERT INTO STORAGE VALUES(4,555)
+INSERT INTO STORAGE VALUES(5,10)

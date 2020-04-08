@@ -1,0 +1,15 @@
+exec sp_configure 'clr_enabled', 1;
+go
+reconfigure;
+go
+create assembly GetItemAsm
+	from 'D:\LABS\DB\Lab3\Lab3\bin\Debug\Lab3.dll';
+
+go
+create procedure GetItem (@min int)
+as external name GetItemAsm.StoredProcedures.GetItem
+
+go
+declare @num int
+exec @num = GetItem 1331
+print @num

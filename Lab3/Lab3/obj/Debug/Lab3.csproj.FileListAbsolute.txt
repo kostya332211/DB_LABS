@@ -1,0 +1,5 @@
+C:\Users\KostyaShiriton\Downloads\BD3-Labs-master\Lab3\Lab3\bin\Debug\Lab3.dll
+C:\Users\KostyaShiriton\Downloads\BD3-Labs-master\Lab3\Lab3\bin\Debug\Lab3.pdb
+C:\Users\KostyaShiriton\Downloads\BD3-Labs-master\Lab3\Lab3\obj\Debug\Lab3.csprojAssemblyReference.cache
+C:\Users\KostyaShiriton\Downloads\BD3-Labs-master\Lab3\Lab3\obj\Debug\Lab3.dll
+C:\Users\KostyaShiriton\Downloads\BD3-Labs-master\Lab3\Lab3\obj\Debug\Lab3.pdb
